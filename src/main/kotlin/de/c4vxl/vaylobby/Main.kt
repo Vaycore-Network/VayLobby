@@ -23,10 +23,6 @@ class Main : JavaPlugin() {
         instance = this
         Main.logger = this.logger
 
-        // Load config
-        saveResource("config.yml", false)
-        Main.config = this.config
-
         // Load CommandAPI
         CommandAPI.onLoad(
             CommandAPIPaperConfig(this)
@@ -38,6 +34,10 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         // Enable CommandAPI
         CommandAPI.onEnable()
+
+        // Load config
+        saveResource("config.yml", false)
+        Main.config = this.config
 
         // Register translations
         ResourceUtils.readResource("langs", Main::class.java).split("\n")

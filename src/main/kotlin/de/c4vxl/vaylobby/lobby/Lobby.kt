@@ -1,6 +1,7 @@
 package de.c4vxl.vaylobby.lobby
 
 import de.c4vxl.vaylobby.Main
+import de.c4vxl.vaylobby.utils.LobbyUtils
 import de.c4vxl.vaylobby.utils.LobbyUtils.reset
 import org.bukkit.Bukkit
 import org.bukkit.Location
@@ -8,7 +9,9 @@ import org.bukkit.Sound
 import org.bukkit.entity.Player
 
 object Lobby {
-    private var spawn: Location = Main.config.getLocation("spawn") ?: Bukkit.getWorlds().first().spawnLocation
+    private var spawn: Location = (Main.config.getLocation("spawn") ?: Bukkit.getWorlds().first().spawnLocation).also {
+        LobbyUtils.applyGameRules(it.world)
+    }
 
     /**
      * Sets the spawn location
@@ -19,6 +22,9 @@ object Lobby {
             set("spawn", location)
             save(Main.instance.dataFolder.resolve("config.yml"))
         }
+
+        // Apply game rules
+        LobbyUtils.applyGameRules(location.world)
     }
 
     /**

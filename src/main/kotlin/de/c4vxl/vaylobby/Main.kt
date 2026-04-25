@@ -2,6 +2,7 @@ package de.c4vxl.vaylobby
 
 import de.c4vxl.vaycoreapi.language.Lang
 import de.c4vxl.vaycoreapi.utils.ResourceUtils
+import de.c4vxl.vaylobby.command.SetSpawnCommand
 import de.c4vxl.vaylobby.handler.ConnectionHandler
 import de.c4vxl.vaylobby.handler.LobbyHandler
 import dev.jorel.commandapi.CommandAPI
@@ -49,6 +50,9 @@ class Main : JavaPlugin() {
         // Register handlers
         ConnectionHandler()
         LobbyHandler()
+
+        // Register commands
+        SetSpawnCommand
 
         logger.info("[+] $name has been enabled!")
     }

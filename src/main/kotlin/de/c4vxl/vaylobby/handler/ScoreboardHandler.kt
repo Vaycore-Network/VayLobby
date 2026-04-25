@@ -63,7 +63,7 @@ class ScoreboardHandler : Listener {
             lang.getCmp("sidebar.line.1", event.player.name),
             Component.text(" "),
             lang.getCmp("sidebar.line.2"),
-            lang.getCmp("sidebar.line.3", event.player.rankPlayer.highestRank?.prefix ?: "/")
+            lang.getCmp("sidebar.line.3", event.player.rankPlayer.highestRank?.name ?: "/")
         )
     }
 }

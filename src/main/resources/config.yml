@@ -14,6 +14,14 @@ config:
   # Set to 'false' to disable quit messages
   send-quit-message: true
 
+  # Set to 'false' to disable double-space boosting
+  enable-booster: true
+
+  # Booster configuration
+  booster:
+    y-offset: 0.5
+    strength: 2.5
+
   item:
     spawn-tp:
       material: ENDER_PEARL

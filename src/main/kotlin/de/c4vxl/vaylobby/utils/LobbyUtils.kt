@@ -1,9 +1,12 @@
 package de.c4vxl.vaylobby.utils
 
+import de.c4vxl.vaylobby.Main
 import org.bukkit.GameMode
 import org.bukkit.GameRules
+import org.bukkit.Sound
 import org.bukkit.World
 import org.bukkit.entity.Player
+import org.bukkit.util.Vector
 
 object LobbyUtils {
     /**
@@ -39,5 +42,17 @@ object LobbyUtils {
             setGameRule(GameRules.FIRE_DAMAGE, false)
             setGameRule(GameRules.RANDOM_TICK_SPEED, 0)
         }
+    }
+
+    private val boosterOffset = Main.config.getDouble("config.booster.y-offset", 0.5)
+    private val boosterStrength = Main.config.getDouble("config.booster.strength", 1.5)
+
+    /**
+     * Applies the boost effect on a player
+     * @param player The player to apply the effect on to
+     */
+    fun applyBooster(player: Player) {
+        player.velocity = player.eyeLocation.direction.add(Vector(0.0, boosterOffset, 0.0)).multiply(boosterStrength)
+        player.playSound(player.location, Sound.ENTITY_PHANTOM_HURT, 3f, 1f)
     }
 }

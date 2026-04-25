@@ -2,8 +2,10 @@ package de.c4vxl.vaylobby.handler
 
 import de.c4vxl.vaylobby.Main
 import de.c4vxl.vaylobby.lobby.Lobby
+import de.c4vxl.vaylobby.utils.LobbyUtils
 import org.bukkit.Bukkit
 import org.bukkit.GameMode
+import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -14,6 +16,7 @@ import org.bukkit.event.player.PlayerDropItemEvent
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.event.player.PlayerMoveEvent
 import org.bukkit.event.player.PlayerSwapHandItemsEvent
+import org.bukkit.event.player.PlayerToggleFlightEvent
 
 /**
  * Handles players in the lobby
@@ -76,6 +79,25 @@ class LobbyHandler : Listener {
     @EventHandler
     fun onInteract(event: PlayerInteractEvent) {
         if (event.player.gameMode == GameMode.CREATIVE) return
+
+        event.isCancelled = true
+    }
+
+    @EventHandler
+    fun onBoost(event: PlayerToggleFlightEvent) {
+        if (event.player.gameMode == GameMode.CREATIVE)
+            return
+
+        if (!event.isFlying)
+            return
+
+        if (!Main.config.getBoolean("config.enable-booster"))
+            return
+
+        if (event.player.location.subtract(0.0, 2.0, 0.0).block.type == Material.AIR && event.player.isFlying)
+            return
+
+        LobbyUtils.applyBooster(event.player)
 
         event.isCancelled = true
     }

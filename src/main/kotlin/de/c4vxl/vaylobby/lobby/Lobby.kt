@@ -46,5 +46,8 @@ object Lobby {
 
         // Play sound
         player.playSound(player.location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 3f, 1f)
+
+        if (Main.config.getBoolean("config.enable-booster"))
+            player.allowFlight = true
     }
 }

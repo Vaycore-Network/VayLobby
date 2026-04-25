@@ -13,6 +13,7 @@ repositories {
     maven("https://repo.papermc.io/repository/maven-public/")
     maven("https://repo.codemc.io/repository/maven-public/")
     maven("https://mvn.c4vxl.de/vaycore/")
+    maven("https://repo.cloudnetservice.eu/releases")
 }
 
 dependencies {
@@ -27,6 +28,9 @@ dependencies {
 
     // Vaycore API
     implementation("de.c4vxl:vaycore-api:1.0.0")
+
+    // CloudNet API
+    implementation("eu.cloudnetservice.cloudnet:bridge-api:4.0.0-RC16")
 }
 
 kotlin {

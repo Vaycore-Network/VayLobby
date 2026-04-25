@@ -24,3 +24,10 @@ config:
       material: COMPASS
       slot: 4 # -1 to remove item
       cooldown: 1
+
+
+server-selector:
+  22:
+    name: "<red>KitPvP</red>"
+    service: "KitPvP"
+    material: DIAMOND_SWORD

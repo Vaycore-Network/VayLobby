@@ -10,3 +10,8 @@
 "ui.server_selector.title": "<red>Select a server</red>"
 
 "command.setspawn.success": "${prefix} <green>Updated spawn location</green>"
+
+"sidebar.title": "      ${prefix}      "
+"sidebar.line.1": "<gray>Welcome <white>$0</white></gray>"
+"sidebar.line.2": "<red>Your Rank:</red>"
+"sidebar.line.3": "<white>$0</white>"

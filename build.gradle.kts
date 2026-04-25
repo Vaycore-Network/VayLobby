@@ -26,8 +26,9 @@ dependencies {
     implementation("dev.jorel:commandapi-paper-shade:11.1.0")
     implementation("dev.jorel:commandapi-kotlin-paper:11.1.0")
 
-    // Vaycore API
+    // Vaycore APIs
     implementation("de.c4vxl:vaycore-api:1.0.0")
+    implementation("de.c4vxl:RankSystem:1.0.0")
 
     // CloudNet API
     implementation("eu.cloudnetservice.cloudnet:bridge-api:4.0.0-RC16")

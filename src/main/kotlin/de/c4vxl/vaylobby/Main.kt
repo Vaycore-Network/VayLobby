@@ -5,6 +5,7 @@ import de.c4vxl.vaycoreapi.utils.ResourceUtils
 import de.c4vxl.vaylobby.command.SetSpawnCommand
 import de.c4vxl.vaylobby.handler.ConnectionHandler
 import de.c4vxl.vaylobby.handler.LobbyHandler
+import de.c4vxl.vaylobby.handler.ScoreboardHandler
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
 import org.bukkit.configuration.file.FileConfiguration
@@ -50,6 +51,7 @@ class Main : JavaPlugin() {
         // Register handlers
         ConnectionHandler()
         LobbyHandler()
+        ScoreboardHandler()
 
         // Register commands
         SetSpawnCommand

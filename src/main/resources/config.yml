@@ -1,0 +1,26 @@
+config:
+  # The maximum distance a player is allowed to move from spawn
+  max-distance-to-spawn: 100
+
+  # The minimum height a player is allowed to go to
+  min-height: -60
+
+  # Set to 'false' to disable welcome messages
+  send-welcome-message: true
+
+  # Set to 'false' to disable join messages
+  send-join-message: true
+
+  # Set to 'false' to disable quit messages
+  send-quit-message: true
+
+  item:
+    spawn-tp:
+      material: ENDER_PEARL
+      slot: 1 # -1 to remove item
+      cooldown: 3
+
+    server-selector:
+      material: COMPASS
+      slot: 4 # -1 to remove item
+      cooldown: 1

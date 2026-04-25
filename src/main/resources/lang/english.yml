@@ -1,0 +1,10 @@
+"prefix": "<gray>[<gold>Vaycore</gold>]</gray>"
+
+"msg.welcome": "${prefix} <gray>Welcome <white>$0</white></gray>"
+"msg.join": "${prefix} <gray><white>$0</white> has joined the lobby</gray>"
+"msg.quit": "${prefix} <gray><white>$0</white> has left the lobby</gray>"
+
+"item.spawn-tp.name": "Teleport to spawn <gray>| Right click</gray>"
+"item.server-selector.name": "<gold>Select a server</gold> <gray>| Right click</gray>"
+
+"ui.server_selector.title": "<red>Select a server</red>"

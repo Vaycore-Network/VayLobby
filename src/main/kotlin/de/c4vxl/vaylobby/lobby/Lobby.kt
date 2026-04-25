@@ -1,20 +1,14 @@
 package de.c4vxl.vaylobby.lobby
 
-import de.c4vxl.vaycoreapi.language.Lang.Companion.getLang
-import de.c4vxl.vaycoreapi.utils.ItemBuilder
 import de.c4vxl.vaylobby.Main
 import de.c4vxl.vaylobby.utils.LobbyUtils.reset
 import org.bukkit.Bukkit
 import org.bukkit.Location
-import org.bukkit.Material
 import org.bukkit.Sound
 import org.bukkit.entity.Player
-import org.bukkit.event.player.PlayerInteractEvent
 
 object Lobby {
     private var spawn: Location = Main.config.getLocation("spawn") ?: Bukkit.getWorlds().first().spawnLocation
-
-    private var spawnTpItemCooldown: Int = Main.config.getInt("config.item.spawn-tp-cooldown", 5) * 20
 
     /**
      * Sets the spawn location
@@ -40,6 +34,9 @@ object Lobby {
     fun sendPlayer(player: Player) {
         player.reset()
         player.teleport(spawn())
+
+        Item.SPAWN_TP(player)?.let { player.inventory.setItem(it.first, it.second) }
+        Item.SERVER_SELECTOR(player)?.let { player.inventory.setItem(it.first, it.second) }
 
         // Play sound
         player.playSound(player.location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 3f, 1f)

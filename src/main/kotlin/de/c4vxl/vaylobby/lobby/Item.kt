@@ -4,6 +4,7 @@ import de.c4vxl.vaycoreapi.language.Lang.Companion.getLang
 import de.c4vxl.vaycoreapi.utils.ItemBuilder
 import de.c4vxl.vaylobby.Main
 import de.c4vxl.vaylobby.ui.ServerSelector
+import de.c4vxl.vaylobby.utils.LobbyUtils
 import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.event.player.PlayerInteractEvent
@@ -63,6 +64,16 @@ object Item {
             player.getLang<Main>().getCmp("item.server-selector.name")
         )
             .rightClick(serverSelectorItemCooldown) { ServerSelector(player).open() }
+            .build()
+    )
+
+    fun BOOSTER(player: Player) = item(
+        "booster",
+        ItemBuilder(
+            getMaterial("booster"),
+            player.getLang<Main>().getCmp("item.booster.name")
+        )
+            .rightClick(serverSelectorItemCooldown) { LobbyUtils.applyBooster(player) }
             .build()
     )
 }

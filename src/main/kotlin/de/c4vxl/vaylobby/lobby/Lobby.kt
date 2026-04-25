@@ -43,6 +43,7 @@ object Lobby {
 
         Item.SPAWN_TP(player)?.let { player.inventory.setItem(it.first, it.second) }
         Item.SERVER_SELECTOR(player)?.let { player.inventory.setItem(it.first, it.second) }
+        Item.BOOSTER(player)?.let { player.inventory.setItem(it.first, it.second) }
 
         // Play sound
         player.playSound(player.location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 3f, 1f)

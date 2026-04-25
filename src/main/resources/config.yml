@@ -30,7 +30,7 @@ config:
 
     server-selector:
       material: COMPASS
-      slot: 4 # -1 to remove item
+      slot: 7 # -1 to remove item
       cooldown: 1
 
 

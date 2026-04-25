@@ -94,11 +94,11 @@ class LobbyHandler : Listener {
         if (!Main.config.getBoolean("config.enable-booster"))
             return
 
-        if (event.player.location.subtract(0.0, 2.0, 0.0).block.type == Material.AIR && event.player.isFlying)
+        event.isCancelled = true
+
+        if (event.player.location.subtract(0.0, 2.0, 0.0).block.type == Material.AIR)
             return
 
         LobbyUtils.applyBooster(event.player)
-
-        event.isCancelled = true
     }
 }

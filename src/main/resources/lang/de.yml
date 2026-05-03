@@ -1,0 +1,18 @@
+"prefix": "<gray>[<gold>Vaycore</gold>]</gray>"
+
+"msg.welcome": "${prefix} <gray>Willkommen <white>$0</white></gray>"
+"msg.join": "${prefix} <gray><white>$0</white> hat die Lobby betreten</gray>"
+"msg.quit": "${prefix} <gray><white>$0</white> hat die Lobby verlassen</gray>"
+
+"item.spawn-tp.name": "Zum Spawn <gray>| Rechtsklick</gray>"
+"item.server-selector.name": "<gold>Wähle einen Server</gold> <gray>| Rechtsklick</gray>"
+"item.booster.name": "<gold>Booster</gold> <gray>| Rechtsklick</gray>"
+
+"ui.server_selector.title": "<red>Wähle einen Server</red>"
+
+"command.setspawn.success": "${prefix} <green>Spawn wurde gesetzt</green>"
+
+"sidebar.title": "      ${prefix}      "
+"sidebar.line.1": "<gray>Willkommen <white>$0</white></gray>"
+"sidebar.line.2": "<red>Dein Rang:</red>"
+"sidebar.line.3": "<white>$0</white>"

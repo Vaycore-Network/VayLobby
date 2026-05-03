@@ -9,6 +9,8 @@
 "item.booster.name": "<gold>Booster</gold> <gray>| Rechtsklick</gray>"
 
 "ui.server_selector.title": "<red>Wähle einen Server</red>"
+"ui.language.title": "<red>Wähle eine Sprache</red>"
+"ui.language.success": "${prefix} <green>Spracheeinstellungen wurden gespeichert!</green>"
 
 "command.setspawn.success": "${prefix} <green>Spawn wurde gesetzt</green>"
 

@@ -3,6 +3,7 @@ package de.c4vxl.vaylobby.handler
 import de.c4vxl.vaycoreapi.language.Lang.Companion.getLang
 import de.c4vxl.vaylobby.Main
 import de.c4vxl.vaylobby.lobby.Lobby
+import de.c4vxl.vaylobby.ui.LanguageUI
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -37,6 +38,10 @@ class ConnectionHandler : Listener {
 
         // Send player to spawn
         Lobby.sendPlayer(event.player)
+
+        // Open language chooser if none is set
+        if (!LanguageUI.already.contains(event.player.uniqueId.toString()))
+            LanguageUI(event.player).open()
     }
 
     @EventHandler

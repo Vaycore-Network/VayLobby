@@ -1,5 +1,6 @@
 package de.c4vxl.vaylobby.handler
 
+import com.destroystokyo.paper.event.player.PlayerAdvancementCriterionGrantEvent
 import de.c4vxl.vaylobby.Main
 import de.c4vxl.vaylobby.lobby.Lobby
 import de.c4vxl.vaylobby.utils.LobbyUtils
@@ -80,6 +81,11 @@ class LobbyHandler : Listener {
     fun onInteract(event: PlayerInteractEvent) {
         if (event.player.gameMode == GameMode.CREATIVE) return
 
+        event.isCancelled = true
+    }
+
+    @EventHandler
+    fun onAdvancement(event: PlayerAdvancementCriterionGrantEvent) {
         event.isCancelled = true
     }
 

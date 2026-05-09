@@ -41,6 +41,7 @@ object LobbyUtils {
             setGameRule(GameRules.MOB_DROPS, false)
             setGameRule(GameRules.FIRE_DAMAGE, false)
             setGameRule(GameRules.RANDOM_TICK_SPEED, 0)
+            setGameRule(GameRules.SHOW_ADVANCEMENT_MESSAGES, false)
         }
     }
 
